@@ -10,10 +10,10 @@
             AddProductReviewIntoList(list);
 
             ProductReviewManagement.RetriveTo3ReviewBasedOnTheHighestRating(list);
-            //ProductReviewManagement.RetriveBasedOnProductIdAndRatig(list);
-            //ProductReviewManagement.CountEachProductID(list);
-            //ProductReviewManagement.RetriveProductIDAndRevies(list);
-            //ProductReviewManagement.SkipTop5DataRetriveRemaining(list);
+            ProductReviewManagement.RetriveBasedOnProductIdAndRatig(list);
+            ProductReviewManagement.CountEachProductID(list);
+            ProductReviewManagement.RetriveProductIDAndRevies(list);
+            ProductReviewManagement.SkipTop5DataRetriveRemaining(list);
             Console.ReadLine();
 
         }
