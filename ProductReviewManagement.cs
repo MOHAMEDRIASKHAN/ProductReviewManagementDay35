@@ -21,4 +21,43 @@ namespace ProductReviewManagementDay35
 
 
         }
-       
+                                                 //UC3
+        public static void RetriveBasedOnProductIdAndRatig(List<ProductReview> list)
+        {
+            Console.WriteLine("\nretriving the productid and rating");
+
+            var res1 = (from p in list where p.Rating > 3 && (p.ProductId.Equals(1) || p.ProductId.Equals(4) || p.ProductId.Equals(9)) select p).ToList();
+            program.IterateOverProductReview(res1);
+        }
+
+                                                  //UC 4
+        public static void CountEachProductID(List<ProductReview> list)
+        {
+
+            Console.WriteLine("\nretriving the count of the product id");
+            var CountOfProductId = (list.GroupBy(p => p.ProductId).Select(product => new { productId = product.Key, ncount = product.Count() })).ToList();
+            foreach (var product in CountOfProductId)
+            {
+                Console.WriteLine("ProductId:{0} Count: {1}", product.productId, product.ncount);
+            }
+        }
+                                                  //uc5
+        public static void RetriveProductIDAndRevies(List<ProductReview> list)
+        {
+            Console.WriteLine("\nRetriving the productId and review");
+
+            var res = (list.Select(product => new { productID = product.ProductId, review = product.Review })).ToList();
+            foreach (var product in res)
+            {
+                Console.WriteLine("ProductId:{0} Review: {1}", product.productID, product.review);
+            }
+        }
+                                                  //uc6
+        public static void SkipTop5DataRetriveRemaining(List<ProductReview> list)
+        {
+            Console.WriteLine("\nSkip the Top 5 Records display remaing records");
+            List<ProductReview> AfterskipRecords = list.Skip(5).ToList();
+            program.IterateOverProductReview(AfterskipRecords);
+        }
+    }
+}

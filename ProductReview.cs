@@ -17,5 +17,5 @@ namespace ProductReviewManagementDay35
         {
             return $"ProductId:{ProductId} UserId: {UserId} Review: {Review} IsLike: {IsLike} Rating: {Rating}";
         }
-    }
+  }
 }
